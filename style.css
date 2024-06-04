@@ -1,0 +1,159 @@
+*{
+    color: rgb(31, 31, 36);
+    padding:0;
+    margin:0;
+    transition: 0.2s ease-in-out;
+}
+
+body{
+    width: 100vw;
+    margin-top: 35px;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    background-color: rgb(146, 96, 96);
+}
+
+
+.game-name h1{
+    font-family: "Rajdhani", sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.player-turn-container{
+    width: 120px;
+    height: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.player-turn-container h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.turn-box{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color:#f8f4f5;
+}
+
+.turn-bg{
+    width: 60px;
+    height: 25px;
+    background-color:#cd114d;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#board{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    height: 300px;
+    width: 300px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.box{
+    margin: 5px;
+    color: #2b010e;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgb(250, 235, 215);
+    cursor: pointer;
+}
+
+.box:hover{
+    background-color: #cecbcb;
+    box-shadow: 5px 5px 5px rgb(52, 48, 48);
+}
+
+#end-game{
+    width: 200px;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgb(193, 184, 184);
+    box-shadow: 5px 5px 5px rgb(52, 48, 48);
+    border-radius: 15px;
+    position: absolute;
+    display: none;
+}
+
+#results{
+    color:#7f0028;
+    filter: drop-shadow(1px 2px black);
+    font-size: 2.5rem;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+#restart{
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+#restart:hover{
+    border: 3px solid white;
+    background-color: #4d051c;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(52, 48, 48);
+    animation-name: wobble;
+    animation-duration: 1s;
+}
+
+@keyframes wobble {
+    from{
+        transform: rotateZ(0deg);
+    } 15% {
+        transform: rotateZ(-15deg);
+    } 30%{
+        transform: rotateZ(10deg);
+    } 45% {
+        transform: rotateZ(-10deg);
+    } 60% {
+        transform: rotateZ(5deg);
+    } 100% {
+        transform: rotateZ(0deg);
+    }
+}
